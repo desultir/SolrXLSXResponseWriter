@@ -24,6 +24,9 @@ Instructions:
 * Create a requesthandler which uses it:
     
     &lt;requestHandler name="/exportinv" class="solr.SearchHandler"&gt;
+
       &lt;lst name="defaults"&gt;
+      
        &lt;str name="wt"&gt;xlsx&lt;/str&gt;
+       
 ...
