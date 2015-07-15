@@ -6,7 +6,7 @@ An XLSX Response Writer for Solr4.6.0. Should work with up to Solr4.x but hasn't
 
 Dependencies:
 * Apache POI 3.11 (poi.jar, poi-ooxml.jar and poi-ooxml-schemas.jar)
-* Solr 4.6 jars
+* Solr 4.6 jars (look in tomcat/webapps/solr/WEB-INF/lib/)
 * SLF4j jars
 
 
