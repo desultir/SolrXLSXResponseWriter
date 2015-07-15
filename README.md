@@ -11,8 +11,17 @@ Dependencies:
 
 
 Instructions:
-Edit the map in NiceMetadataNames.java to provide the XLSXResponseWriter a lookup for translating your ugly metadatanames into user friendly text strings. 
+* Edit the map in NiceMetadataNames.java to provide the XLSXResponseWriter a lookup for translating your ugly metadatanames into user friendly text strings. 
 
-Make sure all the above are on your classpath and make build
+* Make sure all the above are on your classpath and make build
 
-Once you've built, pull the jar file out of ./build and drop it somewhere Solr will find it (ie /home/solr/collection1/lib/dist)
+* Once you've built, pull the jar file out of ./build and drop it somewhere Solr will find it (ie /home/solr/collection1/lib/dist)
+
+* Create a queryResponseHandler in solrconfig.xml:
+    <queryResponseWriter name="xlsx" class="org.stig.solr.response.XLSXResponseWriter" />
+
+* Create a requesthandler which uses it:
+    <requestHandler name="/exportinv" class="solr.SearchHandler">
+      <lst name="defaults">
+       <str name="wt">xlsx</str>
+...
