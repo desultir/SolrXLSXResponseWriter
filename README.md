@@ -18,10 +18,12 @@ Instructions:
 * Once you've built, pull the jar file out of ./build and drop it somewhere Solr will find it (ie /home/solr/collection1/lib/dist)
 
 * Create a queryResponseHandler in solrconfig.xml:
-    <queryResponseWriter name="xlsx" class="org.stig.solr.response.XLSXResponseWriter" />
+
+    &lt;queryResponseWriter name="xlsx" class="org.stig.solr.response.XLSXResponseWriter" /&gt;
 
 * Create a requesthandler which uses it:
-    <requestHandler name="/exportinv" class="solr.SearchHandler">
-      <lst name="defaults">
-       <str name="wt">xlsx</str>
+    
+    &lt;requestHandler name="/exportinv" class="solr.SearchHandler"&gt;
+      &lt;lst name="defaults"&gt;
+       &lt;str name="wt"&gt;xlsx&lt;/str&gt;
 ...
